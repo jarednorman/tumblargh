@@ -239,6 +239,12 @@ module Tumblargh
 
       end
 
+      # Exif is currently not supported. Don't choke.
+      class Exif < Base
+        def should_render?
+          false
+        end
+      end
 
       # {block:Likes} {/block:Likes}  Rendered if you are sharing your likes.
       # {Likes} Standard HTML output of your likes.
